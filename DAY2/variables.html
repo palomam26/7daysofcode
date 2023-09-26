@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Seven days of code</title>
+
+    </head>
+
+    <body>
+        <h1>Aqui temos um simples formulário em HTML</h1>
+        <p> O objetivo é apenas resolver o segundo desafio de sete do 7DaysOfCode da Alura</p>
+        <form id="form">
+            <div>
+                <label >Digite seu nome: </label>
+                <input type="text" id="name" />
+            </div>
+            <div>
+                <label >Quantos anos você tem? </label>
+                <input type="text" id="age" />      
+            </div>
+            <div>
+                <label >Qual linguagem de programação você está estudando? </label>
+                <input type="text" id="language" /> 
+            </div> 
+       
+            <input type="submit" value="Enviar informações" class="envioInformações">
+        </form>
+
+        <script>
+            const formulario = document.getElementById("form");
+
+            formulario.addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            const nome = document.getElementById("name").value;
+            const idade = document.getElementById("age").value;
+            const linguagem = document.getElementById("language").value;
+
+            mandaMensagem(nome, idade, linguagem);
+        });
+
+            function mandaMensagem(nome, idade, linguagem){
+                //console.log( "Olá ${nome}, você tem ${idade} e está aprendendo ${linguagem}")
+                console.log("Olá " + nome + ", você tem " + idade + " e está aprendendo " + linguagem)
+            }
+        </script> 
+    </body>
+</html>
